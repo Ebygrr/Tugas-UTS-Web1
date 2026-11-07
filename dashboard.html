@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | Toko Buku Senja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<header class="topbar"><span class="brand">Toko Buku Senja</span><nav aria-label="Navigasi utama"><a href="dashboard.html" aria-current="page">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><a href="index.html" id="logout">Keluar</a></nav></header>
+<main>
+<section class="hero panel"><h1 id="greeting">Halo!</h1><p id="subgreet">Mau ngapain hari ini?</p></section>
+<nav class="grid menu" aria-label="Menu utama">
+<a class="tile" href="stok.html"><strong>Informasi Stok / Katalog</strong>Lihat dan tambah stok buku</a>
+<a class="tile" href="tracking.html"><strong>Tracking Pengiriman</strong>Cari status dengan nomor DO</a>
+<button class="tile" id="btnLaporan" type="button"><strong>Laporan Pemesanan</strong>Ringkasan pesanan dan pendapatan</button>
+<button class="tile" id="btnHistory" type="button"><strong>History Transaksi</strong>Daftar pesanan yang pernah dibuat</button>
+<a class="tile" href="checkout.html"><strong>Buat Pesanan</strong>Pilih buku dan checkout</a>
+</nav></main>
+<footer><p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p></footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
