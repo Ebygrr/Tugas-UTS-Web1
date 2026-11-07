@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login | Toko Buku Senja</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Toko Buku Senja</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="login">
 
-<div class="auth">
-<aside class="auth-side"><h1>Toko Buku Senja</h1><p>Pesan buku favoritmu, lalu pantau pengirimannya sampai tiba.</p><div class="spines" aria-hidden="true"><i style="height:120px;background:#e3a008"></i><i style="height:160px;background:#f6f8f6"></i><i style="height:100px;background:#7fc4ad"></i><i style="height:180px;background:#e3a008"></i><i style="height:140px;background:#c9e0d6"></i><i style="height:110px;background:#f6f8f6"></i><i style="height:170px;background:#7fc4ad"></i></div></aside>
-<main class="auth-form"><div class="box">
-<h2>Masuk ke akun</h2>
-<form id="formLogin" novalidate>
-<label for="email">Email</label><input id="email" type="email" autocomplete="username" placeholder="nama@email.com">
-<label for="password">Password</label><input id="password" type="password" autocomplete="current-password">
-<button class="btn" type="submit">Login</button>
-</form>
-<div class="links"><button class="btn ghost" id="btnLupa" type="button">Lupa Password</button><button class="btn ghost" id="btnDaftar" type="button">Daftar</button></div>
-<p class="hint">Akun demo: mahasiswa@toko.id / 123456</p>
-</div></main></div>
+  <div class="auth">
+    <aside class="auth-side">
+      <h1>Toko Buku Senja</h1>
+      <p>Pesan buku favoritmu, lalu pantau pengirimannya sampai tiba.</p>
+      
+      <div class="spines" aria-hidden="true">
+        <i style="height:120px; background:#e3a008"></i>
+        <i style="height:160px; background:#f6f8f6"></i>
+        <i style="height:100px; background:#7fc4ad"></i>
+        <i style="height:180px; background:#e3a008"></i>
+        <i style="height:140px; background:#c9e0d6"></i>
+        <i style="height:110px; background:#f6f8f6"></i>
+        <i style="height:170px; background:#7fc4ad"></i>
+      </div>
+    </aside>
 
-<script src="js/data.js"></script>
-<script src="js/script.js"></script>
+    <main class="auth-form">
+      <div class="box">
+        <h2>Masuk ke akun</h2>
+        
+        <form id="formLogin" novalidate>
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="username" placeholder="nama@email.com">
+          
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password">
+          
+          <button class="btn" type="submit">Login</button>
+        </form>
+
+        <div class="links">
+          <button class="btn ghost" id="btnLupa" type="button">Lupa Password</button>
+          <button class="btn ghost" id="btnDaftar" type="button">Daftar</button>
+        </div>
+
+        <p class="hint">Akun demo: mahasiswa@toko.id / 123456</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
