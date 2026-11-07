@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tracking | Toko Buku Senja</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tracking | Toko Buku Senja</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="tracking">
-<header class="topbar"><span class="brand">Toko Buku Senja</span><nav aria-label="Navigasi utama"><a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html" aria-current="page">Tracking</a><a href="index.html" id="logout">Keluar</a></nav></header>
-<main>
-<h1>Informasi Pengiriman</h1>
-<section class="panel"><form id="formTrack" novalidate>
-<label for="noDo">Nomor Delivery Order</label><input id="noDo" placeholder="Contoh: DO-2026001">
-<button class="btn" type="submit">Cari</button></form>
-<p class="hint">Contoh nomor: DO-2026001, DO-2026002, DO-2026003</p></section>
-<section id="hasil" aria-live="polite"></section>
-</main>
-<footer><p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p></footer>
-<script src="js/data.js"></script>
-<script src="js/script.js"></script>
+
+  <header class="topbar">
+    <span class="brand">Toko Buku Senja</span>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html" aria-current="page">Tracking</a>
+      <a href="index.html" id="logout">Keluar</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Informasi Pengiriman</h1>
+
+    <!-- Panel Form Tracking -->
+    <section class="panel">
+      <form id="formTrack" novalidate>
+        <label for="noDo">Nomor Delivery Order</label>
+        <input id="noDo" placeholder="Contoh: DO-2026001">
+        
+        <button class="btn" type="submit">Cari</button>
+      </form>
+      
+      <p class="hint">Contoh nomor: DO-2026001, DO-2026002, DO-2026003</p>
+    </section>
+
+    <!-- Panel Hasil Tracking -->
+    <section id="hasil" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
