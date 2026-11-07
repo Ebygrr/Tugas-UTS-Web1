@@ -1,31 +1,96 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Katalog & Stok | Toko Buku Senja</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog & Stok | Toko Buku Senja</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="stok">
-<header class="topbar"><span class="brand">Toko Buku Senja</span><nav aria-label="Navigasi utama"><a href="dashboard.html">Dashboard</a><a href="stok.html" aria-current="page">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><a href="index.html" id="logout">Keluar</a></nav></header>
-<main>
-<h1>Informasi Stok / Katalog</h1>
-<section class="panel"><h2>Tambah stok baru</h2>
-<form id="formStok" novalidate><div class="row">
-<div><label for="kode">Kode</label><input id="kode" placeholder="BK009"></div>
-<div><label for="judul">Judul</label><input id="judul"></div>
-<div><label for="penulis">Penulis</label><input id="penulis"></div>
-<div><label for="kategori">Kategori</label><input id="kategori"></div>
-<div><label for="harga">Harga (Rp)</label><input id="harga" type="number" min="1"></div>
-<div><label for="stok">Stok</label><input id="stok" type="number" min="0"></div>
-</div><button class="btn" type="submit">Tambah baris stok</button></form></section>
-<section class="panel"><label for="cari">Cari judul / penulis</label><input id="cari" type="search" placeholder="Ketik untuk menyaring...">
-<div class="tablewrap"><table><caption class="empty">Data katalog buku</caption><thead><tr><th>Cover</th><th>Kode</th><th>Judul</th><th>Penulis</th><th>Kategori</th><th>Harga</th><th>Stok</th><th>Aksi</th></tr></thead><tbody id="tbody"></tbody></table></div></section>
-</main>
-<footer><p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p></footer>
-<script src="js/data.js"></script>
-<script src="js/script.js"></script>
+
+  <header class="topbar">
+    <span class="brand">Toko Buku Senja</span>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html" aria-current="page">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+      <a href="index.html" id="logout">Keluar</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Informasi Stok / Katalog</h1>
+
+    <!-- Panel Tambah Stok Baru -->
+    <section class="panel">
+      <h2>Tambah stok baru</h2>
+      <form id="formStok" novalidate>
+        <div class="row">
+          <div>
+            <label for="kode">Kode</label>
+            <input id="kode" placeholder="BK009">
+          </div>
+          <div>
+            <label for="judul">Judul</label>
+            <input id="judul">
+          </div>
+          <div>
+            <label for="penulis">Penulis</label>
+            <input id="penulis">
+          </div>
+          <div>
+            <label for="kategori">Kategori</label>
+            <input id="kategori">
+          </div>
+          <div>
+            <label for="harga">Harga (Rp)</label>
+            <input id="harga" type="number" min="1">
+          </div>
+          <div>
+            <label for="stok">Stok</label>
+            <input id="stok" type="number" min="0">
+          </div>
+        </div>
+        
+        <button class="btn" type="submit">Tambah baris stok</button>
+      </form>
+    </section>
+
+    <!-- Panel Pencarian dan Tabel Katalog -->
+    <section class="panel">
+      <label for="cari">Cari judul / penulis</label>
+      <input id="cari" type="search" placeholder="Ketik untuk menyaring...">
+      
+      <div class="tablewrap">
+        <table>
+          <caption class="empty">Data katalog buku</caption>
+          <thead>
+            <tr>
+              <th>Cover</th>
+              <th>Kode</th>
+              <th>Judul</th>
+              <th>Penulis</th>
+              <th>Kategori</th>
+              <th>Harga</th>
+              <th>Stok</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
