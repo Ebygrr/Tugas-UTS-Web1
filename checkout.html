@@ -1,37 +1,124 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pemesanan | Toko Buku Senja</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemesanan | Toko Buku Senja</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="checkout">
-<header class="topbar"><span class="brand">Toko Buku Senja</span><nav aria-label="Navigasi utama"><a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html" aria-current="page">Pemesanan</a><a href="tracking.html">Tracking</a><a href="index.html" id="logout">Keluar</a></nav></header>
-<main>
-<h1>Pemesanan Buku</h1>
-<section class="panel"><h2>Pilih buku</h2>
-<div class="row"><div><label for="buku">Buku</label><select id="buku"></select></div>
-<div><label for="qty">Jumlah</label><input id="qty" type="number" min="1" value="1"></div></div>
-<button class="btn" id="btnTambah" type="button">Tambah ke pesanan</button></section>
-<section class="panel"><h2>Data pesanan</h2><div class="tablewrap"><table><thead><tr><th>Buku</th><th>Harga</th><th>Jumlah</th><th>Subtotal</th><th>Aksi</th></tr></thead><tbody id="cartBody"></tbody></table></div></section>
-<section class="panel"><h2>Data pemesan dan pembayaran</h2>
-<form id="formCheckout" novalidate><div class="row">
-<div><label for="nama">Nama pemesan</label><input id="nama" autocomplete="name"></div>
-<div><label for="emailP">Email</label><input id="emailP" type="email" autocomplete="email"></div>
-<div><label for="telp">No. HP</label><input id="telp" type="tel" placeholder="08xxxxxxxxxx"></div>
-<div><label for="ekspedisi">Ekspedisi</label><select id="ekspedisi"><option value="">Pilih ekspedisi</option><option data-ongkir="20000">JNE</option><option data-ongkir="18000">J&amp;T</option><option data-ongkir="15000">SiCepat</option></select></div>
-<div><label for="paket">Jenis paket</label><select id="paket"><option>Reguler</option><option>Express</option></select></div>
-<div><label for="bayar">Metode pembayaran</label><select id="bayar"><option value="">Pilih metode</option><option>Transfer Bank</option><option>E-Wallet</option><option>COD</option></select></div>
-</div>
-<label for="alamat">Alamat lengkap</label><textarea id="alamat" rows="3"></textarea>
-<p>Total bayar (termasuk ongkir): <span class="total" id="total">Rp 0</span></p>
-<button class="btn" type="submit">Buat pesanan</button></form></section>
-</main>
-<footer><p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p></footer>
-<script src="js/data.js"></script>
-<script src="js/script.js"></script>
+
+  <header class="topbar">
+    <span class="brand">Toko Buku Senja</span>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html" aria-current="page">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+      <a href="index.html" id="logout">Keluar</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Pemesanan Buku</h1>
+
+    <!-- Panel Pilih Buku -->
+    <section class="panel">
+      <h2>Pilih buku</h2>
+      <div class="row">
+        <div>
+          <label for="buku">Buku</label>
+          <select id="buku"></select>
+        </div>
+        <div>
+          <label for="qty">Jumlah</label>
+          <input id="qty" type="number" min="1" value="1">
+        </div>
+      </div>
+      <button class="btn" id="btnTambah" type="button">Tambah ke pesanan</button>
+    </section>
+
+    <!-- Panel Data Pesanan / Keranjang -->
+    <section class="panel">
+      <h2>Data pesanan</h2>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Buku</th>
+              <th>Harga</th>
+              <th>Jumlah</th>
+              <th>Subtotal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Panel Data Pemesan & Pembayaran -->
+    <section class="panel">
+      <h2>Data pemesan dan pembayaran</h2>
+      <form id="formCheckout" novalidate>
+        <div class="row">
+          <div>
+            <label for="nama">Nama pemesan</label>
+            <input id="nama" autocomplete="name">
+          </div>
+          <div>
+            <label for="emailP">Email</label>
+            <input id="emailP" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="telp">No. HP</label>
+            <input id="telp" type="tel" placeholder="08xxxxxxxxxx">
+          </div>
+          <div>
+            <label for="ekspedisi">Ekspedisi</label>
+            <select id="ekspedisi">
+              <option value="">Pilih ekspedisi</option>
+              <option data-ongkir="20000">JNE</option>
+              <option data-ongkir="18000">J&amp;T</option>
+              <option data-ongkir="15000">SiCepat</option>
+            </select>
+          </div>
+          <div>
+            <label for="paket">Jenis paket</label>
+            <select id="paket">
+              <option>Reguler</option>
+              <option>Express</option>
+            </select>
+          </div>
+          <div>
+            <label for="bayar">Metode pembayaran</label>
+            <select id="bayar">
+              <option value="">Pilih metode</option>
+              <option>Transfer Bank</option>
+              <option>E-Wallet</option>
+              <option>COD</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="alamat">Alamat lengkap</label>
+        <textarea id="alamat" rows="3"></textarea>
+
+        <p>Total bayar (termasuk ongkir): <span class="total" id="total">Rp 0</span></p>
+        
+        <button class="btn" type="submit">Buat pesanan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Toko Buku Senja &ndash; Tugas UTS Pemrograman Web 1</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
