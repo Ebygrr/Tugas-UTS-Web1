@@ -105,110 +105,97 @@ Data dipisah dari logika (`script.js`) supaya kalau suatu saat sumber data digan
 
 ### 1. Halaman Login
 
-![Halaman login](<img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/79f9e82c-49ea-40e4-a0d6-13f73efa2683" />
-)
+![Halaman login] <img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/79f9e82c-49ea-40e4-a0d6-13f73efa2683" />
+
 
 Halaman awal berisi form email dan password, tombol **Login**, serta tombol **Lupa Password** dan **Daftar**. Panel kiri berisi ilustrasi deretan buku sebagai identitas visual toko.
 
 **Validasi form login.** Jika kolom kosong, muncul pop-up pengingat.
 
-![Validasi login](<img width="476" height="168" alt="image" src="https://github.com/user-attachments/assets/50bf2f22-a5fa-44ed-b7f1-86e7f6da617b" />
-)
+![Validasi login] <img width="476" height="168" alt="image" src="https://github.com/user-attachments/assets/50bf2f22-a5fa-44ed-b7f1-86e7f6da617b" />
+
 
 Jika email atau password tidak cocok dengan data, muncul alert berisi **"Email/password yang anda masukkan salah"**. Alert ini memakai `alert()` bawaan browser sehingga tidak tampak di screenshot.
 
 **Modal Lupa Password.** Pengguna memasukkan email, lalu sistem mensimulasikan pengiriman tautan reset.
 
-![Lupa password](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/514cf819-a470-41b3-b56c-cf1498debe37" />
-)
+![Lupa password]<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/514cf819-a470-41b3-b56c-cf1498debe37" />
 
 **Modal Daftar.** Validasi: nama minimal 3 karakter, format email benar, password minimal 6 karakter, dan email belum terdaftar.
 
-![Daftar akun](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/44e8b7a4-4220-4e2e-8290-26fe982aab26" />
-)
+![Daftar akun]<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/44e8b7a4-4220-4e2e-8290-26fe982aab26" />
 
 Setelah berhasil, akun disimpan di `localStorage` dan langsung bisa dipakai login.
 
-![Daftar berhasil](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/4418685c-1fe6-4418-bfa1-fc41a7d86c77" />
-)
+![Daftar berhasil] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/4418685c-1fe6-4418-bfa1-fc41a7d86c77" />
+
 
 ### 2. Dashboard
 
-![Dashboard](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/3d8071e2-b07a-4b87-a9b9-de19ebfc1d18" />
-)
+![Dashboard] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/3d8071e2-b07a-4b87-a9b9-de19ebfc1d18" />
+
 
 Sapaan berubah sesuai jam lokal (pagi, siang, sore, malam), dihitung dengan `new Date().getHours()`. Menu berisi tombol ke Stok/Katalog, Tracking Pengiriman, Laporan Pemesanan, History Transaksi, dan Buat Pesanan. Laporan dan History tampil sebagai modal (lihat bagian 6).
 
 ### 3. Informasi Stok / Katalog
 
-![Halaman stok](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/2d47077a-08ad-47fe-a262-d685285bf729" />
-)
+![Halaman stok] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/2d47077a-08ad-47fe-a262-d685285bf729" />
 
 Tabel dibuat dinamis dari `dataKatalogBuku`: HTML hanya menyediakan `tbody` kosong, lalu JavaScript membuat baris dengan `document.createElement`. Stok yang tinggal 5 atau kurang diberi warna kuning. Tersedia kolom pencarian dan tombol hapus.
 
 **Validasi tambah stok.** Jika ada kolom yang kosong atau tidak valid (misalnya kode sudah dipakai, harga 0), muncul daftar kesalahan.
 
-![Validasi stok](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/318499f2-506b-4b12-aa73-da7d774d06fe" />
-)
+![Validasi stok] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/318499f2-506b-4b12-aa73-da7d774d06fe" />
 
 **Tambah baris stok baru.** Setelah form diisi dengan benar, baris baru langsung muncul di tabel tanpa refresh, dibuat dengan `createElement` dan `appendChild`.
 
-![Stok bertambah](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/96323fb5-6742-4fd2-a93d-8e415251c47c" />
-)
+![Stok bertambah] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/96323fb5-6742-4fd2-a93d-8e415251c47c" />
 
 ### 4. Halaman Pemesanan (Checkout)
 
-![Checkout kosong](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/60e8a195-48e7-4866-98ca-b5354157aec0" />
-)
+![Checkout kosong] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/60e8a195-48e7-4866-98ca-b5354157aec0" />
 
 Pilihan buku diambil dari katalog yang sama dengan halaman stok, jadi buku yang baru ditambahkan juga muncul di sini. Tabel pesanan masih kosong di awal.
 
 **Menambah dan mengubah pesanan.** Buku dipilih lalu ditambahkan. Jumlah bisa diubah langsung di tabel dan tidak boleh melebihi stok. Tombol **Hapus** menghapus satu baris. Total otomatis menghitung subtotal ditambah ongkir sesuai ekspedisi.
 
-![Pesanan terisi](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/444bc605-48e8-4fcf-8497-fb413714a41b" />
-)
+![Pesanan terisi] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/444bc605-48e8-4fcf-8497-fb413714a41b" />
 
 **Validasi form pemesan dan pembayaran.** Semua kesalahan ditampilkan sekaligus (nama, email, nomor HP diawali 08, alamat, ekspedisi, metode pembayaran).
 
-![Validasi checkout](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/014dafa4-544b-45e4-a619-ff4435be3a89" />
-)
+![Validasi checkout] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/014dafa4-544b-45e4-a619-ff4435be3a89" />
 
 **Pesanan berhasil.** Sistem membuat **Nomor Delivery Order**, mengurangi stok buku, dan menyimpan transaksi ke riwayat.
 
-![Pesanan berhasil](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/b8c2ee01-6693-4f64-b190-7b92b9f2523f" />
-)
+![Pesanan berhasil] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/b8c2ee01-6693-4f64-b190-7b92b9f2523f" />
 
 ### 5. Informasi Pengiriman (Tracking)
 
-![Halaman tracking](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/3d431bcd-5b5b-4f3d-b32b-70db3de88bce" />
-)
+![Halaman tracking] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/3d431bcd-5b5b-4f3d-b32b-70db3de88bce" />
 
 Pengguna memasukkan Nomor Delivery Order lalu menekan **Cari**.
 
 **Hasil pencarian data contoh (DO-2026001).** Tampil nama pemesan, status pengiriman dalam bentuk progress bar dan lima langkah (Diproses, Dikemas, Dalam pengiriman, Tiba di kota tujuan, Diterima), serta ekspedisi, tanggal kirim, jenis paket, dan total pembayaran.
 
-![Hasil tracking](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/cc35105f-39b8-4776-8661-fcefc56e2fe5" />
-)
+![Hasil tracking] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/cc35105f-39b8-4776-8661-fcefc56e2fe5" /> 
 
 **Hasil pencarian pesanan yang baru dibuat.** Nomor DO dari checkout bisa dilacak. Status pesanan baru maju otomatis tiap menit sebagai simulasi.
 
 
 **Nomor tidak ditemukan.** Muncul pesan bahwa nomor tidak ditemukan.
 
-![Tracking tidak ditemukan](<img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/cb11d835-de7e-4071-b7ed-3f134fae6da9" />
-)
+![Tracking tidak ditemukan] <img width="1365" height="592" alt="image" src="https://github.com/user-attachments/assets/cb11d835-de7e-4071-b7ed-3f134fae6da9" />
 
 ### 6. Laporan Pemesanan dan History Transaksi
 
 Setelah ada pesanan, **Laporan Pemesanan** menampilkan jumlah pesanan, jumlah buku terjual, dan total pendapatan.
 
-![Laporan pemesanan](<img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/b3447e59-cb4b-46a6-b4ee-41b9448927ad" />
-)
+![Laporan pemesanan] <img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/b3447e59-cb4b-46a6-b4ee-41b9448927ad" />
 
 **History Transaksi** menampilkan daftar nomor DO, tanggal, dan total tiap pesanan.
 
-![History transaksi](<img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/06aca4a2-3130-4a87-96cb-a27860cd0477" />
-)
+![History transaksi] <img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/06aca4a2-3130-4a87-96cb-a27860cd0477" />
+
 
 ---
 
