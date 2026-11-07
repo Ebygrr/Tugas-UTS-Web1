@@ -1,66 +1,427 @@
-/* Toko Buku Senja - style.css (external CSS) */
-:root{--ink:#16302b;--green:#0f5c4d;--green2:#0a443a;--mint:#e4efe9;--paper:#f6f8f6;--amber:#e3a008;--red:#b42318;--line:#cfdcd5}
-*{box-sizing:border-box}
-body{margin:0;font:16px/1.55 'Source Sans 3',system-ui,sans-serif;background:var(--paper);color:var(--ink)}
-h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.2;margin:0 0 .5rem}
-a{color:var(--green)}
-.topbar{background:var(--green);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;padding:.7rem 1.5rem}
-.brand{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;font-weight:700}
-.topbar nav{display:flex;flex-wrap:wrap;gap:.25rem}
-.topbar a{color:#fff;text-decoration:none;padding:.35rem .8rem;border-radius:6px}
-.topbar a:hover,.topbar a[aria-current]{background:var(--green2)}
-main{max-width:1000px;margin:0 auto;padding:1.5rem}
-footer{text-align:center;padding:1.5rem;color:#5b7069;font-size:.9rem}
-.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem}
-label{display:block;font-weight:600;margin:.8rem 0 .25rem}
-input,select,textarea{width:100%;padding:.6rem .7rem;border:1px solid #9db3aa;border-radius:6px;font:inherit;background:#fff}
-input:focus,select:focus,textarea:focus,.btn:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(--amber);outline-offset:1px}
-.btn{display:inline-block;background:var(--green);color:#fff;border:0;border-radius:6px;padding:.6rem 1.1rem;font:inherit;font-weight:600;cursor:pointer;margin-top:.8rem;text-decoration:none}
-.btn:hover{background:var(--green2)}
-.btn.ghost{background:transparent;color:var(--green);border:1px solid var(--green)}
-.btn.ghost:hover{background:var(--mint)}
-.btn.danger{background:var(--red)}
-.btn.small{padding:.25rem .6rem;margin:0;font-size:.9rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0 1rem}
-.tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse}
-th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:middle}
-th{background:var(--mint)}
-td input[type=number]{width:80px}
-.cover{width:42px;height:56px;object-fit:cover;border-radius:3px;background:var(--green);display:block}
-.badge{padding:.1rem .5rem;border-radius:99px;background:var(--mint);font-size:.85rem}
-.badge.low{background:#fde8c4;color:#7a4b00}
-.empty{text-align:center;color:#5b7069}
-.total{font-size:1.3rem;font-weight:700}
-/* login */
-.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
-.auth-side{background:var(--green);color:#fff;padding:3rem;display:flex;flex-direction:column;justify-content:center}
-.auth-side h1{font-size:2.8rem}
-.spines{display:flex;align-items:flex-end;gap:6px;margin-top:2rem}
-.spines i{display:block;width:34px;border-radius:3px 3px 0 0}
-.auth-form{display:flex;align-items:center;justify-content:center;padding:2rem}
-.auth-form .box{width:100%;max-width:380px}
-.links{display:flex;gap:.6rem;flex-wrap:wrap}
-.hint{font-size:.9rem;color:#5b7069;margin-top:1rem}
-/* dashboard */
-.hero h1{font-size:2.2rem}
-.tile{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:10px;padding:1.2rem;color:var(--ink);text-decoration:none;font:inherit;cursor:pointer}
-.tile:hover{background:var(--mint)}
-.tile strong{display:block;font-family:'Fraunces',Georgia,serif;font-size:1.2rem}
-/* modal */
-.overlay{position:fixed;inset:0;background:rgba(10,30,25,.6);display:flex;align-items:center;justify-content:center;padding:1rem;z-index:10}
-.modal{background:#fff;border-radius:12px;padding:1.5rem;width:100%;max-width:540px;max-height:90vh;overflow:auto;position:relative}
-.close{position:absolute;top:.4rem;right:.8rem;border:0;background:none;font-size:1.8rem;cursor:pointer}
-.modal ul{padding-left:1.2rem}
-/* tracking */
-.bar{height:10px;background:var(--mint);border-radius:99px;overflow:hidden;margin:1rem 0}
-.bar span{display:block;height:100%;background:var(--amber);transition:width .6s}
-.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem}
-.steps li{padding:.5rem;border-radius:6px;background:#eef2f0;color:#5b7069;text-align:center;font-size:.9rem}
-.steps li.done{background:var(--green);color:#fff}
-.steps li.now{background:var(--amber);color:#2b2000;font-weight:700}
-dl{display:grid;grid-template-columns:max-content 1fr;gap:.3rem 1rem}
-dt{font-weight:600}dd{margin:0}
-@media(max-width:700px){.auth{grid-template-columns:1fr}.auth-side{padding:2rem}}
-@media(prefers-reduced-motion:reduce){.bar span{transition:none}}
+/* =================================================================agang
+   Toko Buku Senja - style.css (External CSS)
+   =================================================================== */
+
+/* 1. Root & Variabel Warna */
+:root {
+  --ink: #16302b;
+  --green: #0f5c4d;
+  --green2: #0a443a;
+  --mint: #e4efe9;
+  --paper: #f6f8f6;
+  --amber: #e3a008;
+  --red: #b42318;
+  --line: #cfdcd5;
+}
+
+/* 2. Global Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.55 'Source Sans 3', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.2;
+  margin: 0 0 .5rem;
+}
+
+a {
+  color: var(--green);
+}
+
+/* 3. Layout Utama (Topbar, Main, Footer) */
+.topbar {
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  padding: .7rem 1.5rem;
+}
+
+.brand {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+}
+
+.topbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: .35rem .8rem;
+  border-radius: 6px;
+}
+
+.topbar a:hover,
+.topbar a[aria-current] {
+  background: var(--green2);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #5b7069;
+  font-size: .9rem;
+}
+
+/* 4. Panel, Form, & Tombol */
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: .8rem 0 .25rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: .6rem .7rem;
+  border: 1px solid #9db3aa;
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.btn:focus-visible,
+a:focus-visible,
+.tile:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: .6rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: .8rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--green2);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.btn.ghost:hover {
+  background: var(--mint);
+}
+
+.btn.danger {
+  background: var(--red);
+}
+
+.btn.small {
+  padding: .25rem .6rem;
+  margin: 0;
+  font-size: .9rem;
+}
+
+/* 5. Grid, Tabel, & Komponen Pendukung */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0 1rem;
+}
+
+.tablewrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: .55rem .6rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+th {
+  background: var(--mint);
+}
+
+td input[type=number] {
+  width: 80px;
+}
+
+.cover {
+  width: 42px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--green);
+  display: block;
+}
+
+.badge {
+  padding: .1rem .5rem;
+  border-radius: 99px;
+  background: var(--mint);
+  font-size: .85rem;
+}
+
+.badge.low {
+  background: #fde8c4;
+  color: #7a4b00;
+}
+
+.empty {
+  text-align: center;
+  color: #5b7069;
+}
+
+.total {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* 6. Halaman Login / Auth */
+.auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.auth-side {
+  background: var(--green);
+  color: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-side h1 {
+  font-size: 2.8rem;
+}
+
+.spines {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 2rem;
+}
+
+.spines i {
+  display: block;
+  width: 34px;
+  border-radius: 3px 3px 0 0;
+}
+
+.auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-form .box {
+  width: 100%;
+  max-width: 380px;
+}
+
+.links {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+.hint {
+  font-size: .9rem;
+  color: #5b7069;
+  margin-top: 1rem;
+}
+
+/* 7. Halaman Dashboard */
+.hero h1 {
+  font-size: 2.2rem;
+}
+
+.tile {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--green);
+  border-radius: 10px;
+  padding: 1.2rem;
+  color: var(--ink);
+  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tile:hover {
+  background: var(--mint);
+}
+
+.tile strong {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+}
+
+/* 8. Komponen Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 25, .6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: .4rem;
+  right: .8rem;
+  border: 0;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal ul {
+  padding-left: 1.2rem;
+}
+
+/* 9. Halaman Tracking & Progress */
+.bar {
+  height: 10px;
+  background: var(--mint);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--amber);
+  transition: width .6s;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: .5rem;
+}
+
+.steps li {
+  padding: .5rem;
+  border-radius: 6px;
+  background: #eef2f0;
+  color: #5b7069;
+  text-align: center;
+  font-size: .9rem;
+}
+
+.steps li.done {
+  background: var(--green);
+  color: #fff;
+}
+
+.steps li.now {
+  background: var(--amber);
+  color: #2b2000;
+  font-weight: 700;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: .3rem 1rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin: 0;
+}
+
+/* 10. Responsive Breakpoints & Media Queries */
+@media (max-width: 700px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+  .auth-side {
+    padding: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar span {
+    transition: none;
+  }
+}
